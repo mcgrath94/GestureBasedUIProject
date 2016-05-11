@@ -103,12 +103,12 @@ namespace Gesture_App_1
         {
             base.OnActivated(args);
 
-            Frame rootFrame = Window.Current.Content as Frame;
-            MainPage page = rootFrame.Content as MainPage;
-            if (page == null)
-            {
-                return;
-            }
+            //Frame rootFrame = Window.Current.Content as Frame;
+            //MainPage page = rootFrame.Content as MainPage;
+            //if (page == null)
+            //{
+            //    return;
+            //}
 
             if (args.Kind == ActivationKind.VoiceCommand)
             {
@@ -123,11 +123,13 @@ namespace Gesture_App_1
                 {
                     case "test1":
                         //page.showMainPage();
-
-                        rootFrame.Navigate(typeof(PageTwo));
-
+                        //rootFrame.Navigate(typeof(PageTwo));
                         //navigationToPageType = typeof(MainPage);
                         //dialog.Content = "This is the test";
+                        break;
+
+                    case "testBreakfast":
+                        //go to breakfast recipes - have to add this to vcd yet
                         break;
 
                     default:

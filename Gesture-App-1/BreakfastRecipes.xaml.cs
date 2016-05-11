@@ -13,34 +13,18 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Gesture_App_1
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class BreakfastRecipes : Page
     {
-        public MainPage()
+        public BreakfastRecipes()
         {
             this.InitializeComponent();
-        }
-
-        public void showMainPage()
-        {
-            //Frame.Navigate(typeof(PageTwo));
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //MyFrame.Navigate(typeof(BreakfastRecipes));
-            this.Frame.Navigate(typeof(BreakfastRecipes));
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(DinnerRecipes));
         }
     }
 }
