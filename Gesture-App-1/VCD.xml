@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
+  <CommandSet xml:lang="en-gb" Name="CollegeAppCommandSet_en-gb">
+    <CommandPrefix> Listen </CommandPrefix>
+    <Example> Open main page </Example>
+    
+     <Command Name="test1">
+      <Example> open the main page </Example>
+       
+      <ListenFor> open main page </ListenFor>
+      <ListenFor> open page one </ListenFor>
+      <ListenFor> do the test </ListenFor>
+       
+      <Feedback> opening the main page </Feedback>
+     <Navigate/>
+    </Command>
+    
+  
+  </CommandSet>
+</VoiceCommands>
