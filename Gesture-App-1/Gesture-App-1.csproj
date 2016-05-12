@@ -92,6 +92,15 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Recipes\Black-Forest-Pavlova.jpg" />
+    <Content Include="Assets\Recipes\Chocolate-Caramel-Treats.jpg" />
+    <Content Include="Assets\Recipes\Eggs-Benedict.jpg" />
+    <Content Include="Assets\Recipes\Lemon-Sponge.jpg" />
+    <Content Include="Assets\Recipes\Pancakes.jpg" />
+    <Content Include="Assets\Recipes\Porridge.jpg" />
+    <Content Include="Assets\Recipes\Shepherds-Pie.jpg" />
+    <Content Include="Assets\Recipes\Spaghetti-Bolgnese.jpg" />
+    <Content Include="Assets\Recipes\Sweet-Sour-Chicken-2.jpg" />
     <Content Include="VCD.xml" />
     <None Include="project.json" />
   </ItemGroup>
@@ -109,6 +118,10 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecipeItem.cs" />
+    <Compile Include="RecipeItemControl.xaml.cs">
+      <DependentUpon>RecipeItemControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -143,7 +156,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="RecipeItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

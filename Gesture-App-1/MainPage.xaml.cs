@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -12,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Gesture_App_1;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,25 +24,56 @@ namespace Gesture_App_1
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public MainPage()
-        {
-            this.InitializeComponent();
-        }
+            private ObservableCollection<RecipeItem> RecipeItems;
+            public bool launchedNormal = true;
 
-        public void showMainPage()
-        {
-            Frame.Navigate(typeof(BreakfastRecipes));
-        }
+            public MainPage()
+            {
+                this.InitializeComponent();
+                RecipeItems = new ObservableCollection<RecipeItem>();
+            }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //MyFrame.Navigate(typeof(BreakfastRecipes));
-            this.Frame.Navigate(typeof(BreakfastRecipes));
-        }
+            private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+            {
+                MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+            }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(DinnerRecipes));
+            private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+                if (Breakfast.IsSelected)
+                {
+                    RecipeManager.GetRecipe("Breakfast", RecipeItems);
+                    TitleTextBlock.Text = "Breakfast";
+                }
+                else if (Dinner.IsSelected)
+                {
+                    RecipeManager.GetRecipe("Dinner", RecipeItems);
+                    TitleTextBlock.Text = "Dinner";
+                }
+            }
+
+            private void Page_Loaded(object sender, RoutedEventArgs e)
+            {
+                //if (launchedNormal == true)
+                //{
+                    Breakfast.IsSelected = true;
+                //}
+            }
+
+            public void BreakfastVoice()
+            {
+                //launchedNormal = false;  do not need this as it goes to breakfast recipes automatically anyway
+                RecipeManager.GetRecipe("Breakfast", RecipeItems);
+                TitleTextBlock.Text = "Breakfast";
+            }
+            public void DinnerVoice()
+            {
+                launchedNormal = false;
+                RecipeManager.GetRecipe("Dinner", RecipeItems);
+                TitleTextBlock.Text = "Dinner";
+            }
+
+
         }
     }
-}
+

@@ -14,12 +14,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-using Windows.Media.SpeechRecognition;
-using Windows.ApplicationModel.VoiceCommands;
-using Windows.Storage;
-
 using System.Diagnostics;
+using Windows.ApplicationModel.VoiceCommands;
+using Windows.Media.SpeechRecognition;
+using Windows.Storage;
 using Windows.UI.Popups;
 
 namespace Gesture_App_1
@@ -142,26 +140,32 @@ namespace Gesture_App_1
                 VoiceCommandActivatedEventArgs command = args as VoiceCommandActivatedEventArgs;
                 SpeechRecognitionResult result = command.Result;
 
-                string commandName = result.RulePath[0];                
+                string commandName = result.RulePath[0];
 
                 //MessageDialog dialog = new MessageDialog("");
+                MainPage page = rootFrame.Content as MainPage;
+                if (page == null)
+                {
+                    return;
+                }
 
                 switch (commandName)
                 {
                     case "openMainPage":
                         //navigates to the main page
-                        rootFrame.Navigate(typeof(MainPage));
+                        //rootFrame.Navigate(typeof(MainPage));
                         //dialog.Content = "This is the test - could be used to open dialog";
                         break;
 
                     case "openBreakfasts":
                         //go to breakfast recipes
-                        rootFrame.Navigate(typeof(BreakfastRecipes));
+                        page.BreakfastVoice();
                         break;
 
                     case "openDinners":
                         //go to dinner recipes 
-                        rootFrame.Navigate(typeof(DinnerRecipes));
+                        //rootFrame.Navigate(typeof(MainPage));
+                        page.DinnerVoice();
                         break;
 
                     default:
