@@ -28,7 +28,7 @@ namespace Gesture_App_1
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
-    {
+    {        
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -47,7 +47,7 @@ namespace Gesture_App_1
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override async void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e) 
         {
 
 #if DEBUG
@@ -56,36 +56,40 @@ namespace Gesture_App_1
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
+            try {
+                Frame rootFrame = Window.Current.Content as Frame;
 
-            Frame rootFrame = Window.Current.Content as Frame;
-
-            // Do not repeat app initialization when the Window already has content,
-            // just ensure that the window is active
-            if (rootFrame == null)
-            {
-                // Create a Frame to act as the navigation context and navigate to the first page
-                rootFrame = new Frame();
-
-                rootFrame.NavigationFailed += OnNavigationFailed;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                // Do not repeat app initialization when the Window already has content,
+                // just ensure that the window is active
+                if (rootFrame == null)
                 {
-                    //TODO: Load state from previously suspended application
+                    // Create a Frame to act as the navigation context and navigate to the first page
+                    rootFrame = new Frame();
+
+                    rootFrame.NavigationFailed += OnNavigationFailed;
+
+                    if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                    {
+                        //TODO: Load state from previously suspended application
+                    }
+
+                    // Place the frame in the current Window
+                    Window.Current.Content = rootFrame;
                 }
 
-                // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
-            }
-
-            if (rootFrame.Content == null)
+                if (rootFrame.Content == null)
+                {
+                    // When the navigation stack isn't restored navigate to the first page,
+                    // configuring the new page by passing required information as a navigation
+                    // parameter
+                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                }
+                // Ensure the current window is active
+                Window.Current.Activate();
+            }catch
             {
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                //test
             }
-            // Ensure the current window is active
-            Window.Current.Activate();
 
             try
             {
@@ -99,16 +103,42 @@ namespace Gesture_App_1
 
         }
 
-        protected async override void OnActivated(IActivatedEventArgs args)
+        protected override void OnActivated(IActivatedEventArgs args)
         {
             base.OnActivated(args);
 
-            //Frame rootFrame = Window.Current.Content as Frame;
-            //MainPage page = rootFrame.Content as MainPage;
-            //if (page == null)
-            //{
-            //    return;
-            //}
+            
+                Frame rootFrame = Window.Current.Content as Frame;
+
+                // Do not repeat app initialization when the Window already has content,
+                // just ensure that the window is active
+                if (rootFrame == null)
+                {
+                    // Create a Frame to act as the navigation context and navigate to the first page
+                    rootFrame = new Frame();
+
+                    rootFrame.NavigationFailed += OnNavigationFailed;
+
+                    if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                    {
+                        //TODO: Load state from previously suspended application
+                    }
+
+                    // Place the frame in the current Window
+                    Window.Current.Content = rootFrame;
+                }
+
+                if (rootFrame.Content == null)
+                {
+                    // When the navigation stack isn't restored navigate to the first page,
+                    // configuring the new page by passing required information as a navigation
+                    // parameter
+                    rootFrame.Navigate(typeof(MainPage));
+                }
+                // Ensure the current window is active
+                Window.Current.Activate();
+            
+
 
             if (args.Kind == ActivationKind.VoiceCommand)
             {
@@ -117,15 +147,19 @@ namespace Gesture_App_1
 
                 string commandName = result.RulePath[0];
 
+                
+
                 //MessageDialog dialog = new MessageDialog("");
 
                 switch (commandName)
                 {
                     case "test1":
                         //page.showMainPage();
-                        //rootFrame.Navigate(typeof(PageTwo));
+                        rootFrame.Navigate(typeof(BreakfastRecipes));
+                        
                         //navigationToPageType = typeof(MainPage);
                         //dialog.Content = "This is the test";
+                        //NavigationService.Navigate(typeof(MainPage));
                         break;
 
                     case "testBreakfast":
@@ -138,7 +172,10 @@ namespace Gesture_App_1
                     
                 }
 
+
+
                 //await dialog.ShowAsync();
+                
             }
         }
 

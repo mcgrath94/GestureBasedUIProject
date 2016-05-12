@@ -29,7 +29,7 @@ namespace Gesture_App_1
 
         public void showMainPage()
         {
-            //Frame.Navigate(typeof(PageTwo));
+            Frame.Navigate(typeof(BreakfastRecipes));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
