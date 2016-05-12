@@ -56,7 +56,7 @@ namespace Gesture_App_1
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-            try {
+            
                 Frame rootFrame = Window.Current.Content as Frame;
 
                 // Do not repeat app initialization when the Window already has content,
@@ -86,10 +86,7 @@ namespace Gesture_App_1
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
-            }catch
-            {
-                //test
-            }
+            
 
             try
             {
@@ -107,7 +104,7 @@ namespace Gesture_App_1
         {
             base.OnActivated(args);
 
-            
+                //taken from OnLaunched so app can be launched using cortana
                 Frame rootFrame = Window.Current.Content as Frame;
 
                 // Do not repeat app initialization when the Window already has content,
@@ -145,25 +142,26 @@ namespace Gesture_App_1
                 VoiceCommandActivatedEventArgs command = args as VoiceCommandActivatedEventArgs;
                 SpeechRecognitionResult result = command.Result;
 
-                string commandName = result.RulePath[0];
-
-                
+                string commandName = result.RulePath[0];                
 
                 //MessageDialog dialog = new MessageDialog("");
 
                 switch (commandName)
                 {
-                    case "test1":
-                        //page.showMainPage();
-                        rootFrame.Navigate(typeof(BreakfastRecipes));
-                        
-                        //navigationToPageType = typeof(MainPage);
-                        //dialog.Content = "This is the test";
-                        //NavigationService.Navigate(typeof(MainPage));
+                    case "openMainPage":
+                        //navigates to the main page
+                        rootFrame.Navigate(typeof(MainPage));
+                        //dialog.Content = "This is the test - could be used to open dialog";
                         break;
 
-                    case "testBreakfast":
-                        //go to breakfast recipes - have to add this to vcd yet
+                    case "openBreakfasts":
+                        //go to breakfast recipes
+                        rootFrame.Navigate(typeof(BreakfastRecipes));
+                        break;
+
+                    case "openDinners":
+                        //go to dinner recipes 
+                        rootFrame.Navigate(typeof(DinnerRecipes));
                         break;
 
                     default:
@@ -171,10 +169,7 @@ namespace Gesture_App_1
                         break;
                     
                 }
-
-
-
-                //await dialog.ShowAsync();
+                //await dialog.ShowAsync(); //could be used to open dialog along with above
                 
             }
         }

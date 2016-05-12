@@ -5,17 +5,32 @@
     <CommandPrefix> Listen </CommandPrefix>
     <Example> Open main page </Example>
     
-     <Command Name="test1">
-      <Example> open the main page </Example>
-       
-      <ListenFor> open main page </ListenFor>
-      <ListenFor> open page one </ListenFor>
-      <ListenFor> do the test </ListenFor>
-       
-      <Feedback> opening the main page </Feedback>
+     <Command Name="openMainPage">
+      <Example> open the main page </Example>      
+      <ListenFor> open [the] main page </ListenFor>
+      <ListenFor> open [the] Recipe [app] </ListenFor> 
+       <ListenFor> show [the] Recipe [app] </ListenFor> 
+      <Feedback> Opening the Recipes App Main Page </Feedback>
      <Navigate/>
     </Command>
     
+        <Command Name="openBreakfasts">
+      <Example> open the breakfasts page </Example>      
+      <ListenFor> open [the] breakfast [recipes] page </ListenFor>
+      <ListenFor> show [me] breakfast ideas </ListenFor>  
+      <ListenFor> show [me] breakfast recipes </ListenFor>  
+      <Feedback> Getting Breakfast Recipes </Feedback>
+     <Navigate/>
+    </Command>
+
+    <Command Name="openDinners">
+      <Example> open the main page </Example>      
+      <ListenFor> open [the] dinner [recipes] page </ListenFor>
+      <ListenFor> show [me] dinner ideas </ListenFor>  
+      <ListenFor> show [me] dinner recipes </ListenFor>  
+      <Feedback> Getting Dinner Recipes </Feedback>
+     <Navigate/>
+    </Command>
   
   </CommandSet>
 </VoiceCommands>
