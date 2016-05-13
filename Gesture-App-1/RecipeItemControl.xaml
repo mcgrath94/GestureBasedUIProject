@@ -44,11 +44,12 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <Image Name="MyImage" Source="{x:Bind RecipeItem.Image}" Height="100" />
+        <TextBlock Text="{x:Bind RecipeItem.RecipeName}" Name="RecipeTextBlock" RelativePanel.AlignTopWithPanel="True" FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" FontStyle="Italic" />
+        
 
-        <RelativePanel Grid.Row="1" Margin="10">
-            <TextBlock Text="{x:Bind RecipeItem.RecipeName}" Name="RecipeTextBlock" RelativePanel.AlignTopWithPanel="True" FontSize="20" TextWrapping="Wrap" />
-            <TextBlock Text="{x:Bind RecipeItem.Ingredients}" Name="IngredientsTextBlock" RelativePanel.Below="RecipeTextBlock" FontSize="10" TextWrapping="Wrap" />
+        <RelativePanel Grid.Row="1" Margin="5">
+            <Image Name="MyImage" Source="{x:Bind RecipeItem.Image}" Width="200" Stretch="Uniform"/>
+            <TextBlock Text="{x:Bind RecipeItem.Ingredients}" Name="IngredientsTextBlock" RelativePanel.Below="MyImage" FontSize="10" TextWrapping="Wrap" />
         </RelativePanel>
 
     </Grid>
