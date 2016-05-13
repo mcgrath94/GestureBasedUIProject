@@ -24,7 +24,13 @@ namespace Gesture_App_1
     /// </summary>
     public sealed partial class MainPage : Page
     {
-            private ObservableCollection<RecipeItem> RecipeItems;
+        //public int timeTaken;
+        public int shortTime = 10;
+        public int medTime = 10;
+        public int longTime = 10;
+
+
+        private ObservableCollection<RecipeItem> RecipeItems;
             public bool launchedNormal = true;
 
             public MainPage()
@@ -73,11 +79,11 @@ namespace Gesture_App_1
                 TitleTextBlock.Text = "Dinner";
             }
 
-            public void TimeRecipeVoice()
+            public void TimeRecipeVoice(string timeTaken)
             {
             //testing
             launchedNormal = false;
-            RecipeManager.GetShortRecipe(10, RecipeItems);
+            RecipeManager.GetShortRecipe(timeTaken, RecipeItems);
             TitleTextBlock.Text = "Short Recipes";
             }
 

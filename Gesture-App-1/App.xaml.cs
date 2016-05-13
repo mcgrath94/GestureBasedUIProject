@@ -26,7 +26,9 @@ namespace Gesture_App_1
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
-    {        
+    {
+
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -137,10 +139,46 @@ namespace Gesture_App_1
 
             if (args.Kind == ActivationKind.VoiceCommand)
             {
-                VoiceCommandActivatedEventArgs command = args as VoiceCommandActivatedEventArgs;
-                SpeechRecognitionResult result = command.Result;
+                //VoiceCommandActivatedEventArgs command = args as VoiceCommandActivatedEventArgs;
+                //SpeechRecognitionResult result = command.Result;
 
-                string commandName = result.RulePath[0];
+                var commandArgs = args as Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs;
+                var speechRecognitionResult = commandArgs.Result;
+                string commandName = speechRecognitionResult.RulePath[0];
+                string textSpoken = speechRecognitionResult.Text;
+
+                //string commandName = result.RulePath[0];
+
+                //testing the timetaken command
+                string spokenTime = "";
+                try
+                {
+                    spokenTime = speechRecognitionResult.SemanticInterpretation.Properties["timeTaken"][0];
+                }
+                catch
+                {
+                    //
+                }
+
+                
+                string timeTaken = null;
+
+                switch(spokenTime)
+                {
+                    case "short":
+                        timeTaken = "shortTime";
+                        break;
+                    case "medium":
+                        timeTaken = "medTime";
+                        break;
+                    case "long":
+                        timeTaken = "longTime";
+                        break;
+                    default:
+                        Debug.WriteLine("No matching command found");
+                        break;
+                }
+
 
                 //MessageDialog dialog = new MessageDialog("");
                 MainPage page = rootFrame.Content as MainPage;
@@ -148,6 +186,7 @@ namespace Gesture_App_1
                 {
                     return;
                 }
+
 
                 switch (commandName)
                 {
@@ -171,7 +210,7 @@ namespace Gesture_App_1
                     case "timeTest":
                         //go to dinner recipes 
                         //rootFrame.Navigate(typeof(MainPage));
-                        page.TimeRecipeVoice();
+                        page.TimeRecipeVoice(timeTaken);
                         break;
 
                     default:
