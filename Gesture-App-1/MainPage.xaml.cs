@@ -79,12 +79,12 @@ namespace Gesture_App_1
                 TitleTextBlock.Text = "Dinner";
             }
 
-            public void TimeRecipeVoice(string timeTaken)
+            public void difficultyRecipeVoice(string difficulty)
             {
             //testing
             launchedNormal = false;
-            RecipeManager.GetShortRecipe(timeTaken, RecipeItems);
-            TitleTextBlock.Text = "Short Recipes";
+            RecipeManager.GetDifficulty(difficulty, RecipeItems);
+            TitleTextBlock.Text = "Chosen Recipes";
             }
 
     }

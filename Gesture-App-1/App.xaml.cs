@@ -150,10 +150,10 @@ namespace Gesture_App_1
                 //string commandName = result.RulePath[0];
 
                 //testing the timetaken command
-                string spokenTime = "";
+                string spokenDifficulty = "";
                 try
                 {
-                    spokenTime = speechRecognitionResult.SemanticInterpretation.Properties["timeTaken"][0];
+                    spokenDifficulty = speechRecognitionResult.SemanticInterpretation.Properties["difficulty"][0];
                 }
                 catch
                 {
@@ -161,18 +161,18 @@ namespace Gesture_App_1
                 }
 
                 
-                string timeTaken = null;
+                string difficulty = null;
 
-                switch(spokenTime)
+                switch(spokenDifficulty)
                 {
-                    case "short":
-                        timeTaken = "shortTime";
+                    case "easy":
+                        difficulty = "easyLevel";
                         break;
-                    case "medium":
-                        timeTaken = "medTime";
+                    case "moderate":
+                        difficulty = "intermediateLevel";
                         break;
-                    case "long":
-                        timeTaken = "longTime";
+                    case "hard":
+                        difficulty = "hardLevel";
                         break;
                     default:
                         Debug.WriteLine("No matching command found");
@@ -207,10 +207,10 @@ namespace Gesture_App_1
                         page.DinnerVoice();
                         break;
 
-                    case "timeTest":
+                    case "showDifficulty":
                         //go to dinner recipes 
                         //rootFrame.Navigate(typeof(MainPage));
-                        page.TimeRecipeVoice(timeTaken);
+                        page.difficultyRecipeVoice(difficulty);
                         break;
 
                     default:

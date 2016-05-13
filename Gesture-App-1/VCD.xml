@@ -32,19 +32,19 @@
      <Navigate/>
     </Command>
     
-  <Command Name="timeTest">
-      <Example> show short recipes </Example>      
-      <ListenFor> open [the] {timeTaken} [recipes] page </ListenFor>
-      <ListenFor> show [me] {timeTaken} ideas </ListenFor>  
-      <ListenFor> show [me] {timeTaken} recipes </ListenFor>  
+  <Command Name="showDifficulty">
+      <Example> show easy recipes </Example>      
+      <ListenFor> open [the] {difficulty} [recipes] page </ListenFor>
+      <ListenFor> show [me] {difficulty} ideas </ListenFor>  
+      <ListenFor> show [me] {difficulty} recipes </ListenFor>  
       <Feedback> Getting Recipes </Feedback>
      <Navigate/>
     </Command>
     
-  <PhraseList Label="timeTaken">
-    <Item> short </Item>
-    <Item> medium </Item>
-    <Item> long </Item>
+  <PhraseList Label="difficulty">
+    <Item> easy </Item>
+    <Item> moderate </Item>
+    <Item> hard </Item>
   </PhraseList>
   
   </CommandSet>
