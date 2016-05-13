@@ -9,7 +9,7 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid Background="White" Margin="10" Height="500" Width="200">
+    <Grid Background="White" Margin="10" Height="Auto" Width="200">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -44,11 +44,11 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <Image Name="MyImage" Source="{x:Bind RecipeItem.Image}" />
+        <Image Name="MyImage" Source="{x:Bind RecipeItem.Image}" Height="100" />
 
         <RelativePanel Grid.Row="1" Margin="10">
             <TextBlock Text="{x:Bind RecipeItem.RecipeName}" Name="RecipeTextBlock" RelativePanel.AlignTopWithPanel="True" FontSize="20" TextWrapping="Wrap" />
-            <TextBlock Text="{x:Bind RecipeItem.Ingredients}" Name="IngredientsTextBlock" RelativePanel.AlignBottomWithPanel="True" FontSize="10" TextWrapping="Wrap"/>
+            <TextBlock Text="{x:Bind RecipeItem.Ingredients}" Name="IngredientsTextBlock" RelativePanel.Below="RecipeTextBlock" FontSize="10" TextWrapping="Wrap" />
         </RelativePanel>
 
     </Grid>

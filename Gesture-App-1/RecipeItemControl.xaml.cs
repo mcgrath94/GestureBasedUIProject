@@ -27,5 +27,7 @@ namespace Gesture_App_1
             this.InitializeComponent();
             this.DataContextChanged += (s, e) => Bindings.Update();
         }
+
+
     }
 }

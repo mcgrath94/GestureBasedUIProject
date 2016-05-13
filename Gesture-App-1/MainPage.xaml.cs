@@ -50,14 +50,14 @@ namespace Gesture_App_1
                     RecipeManager.GetRecipe("Dinner", RecipeItems);
                     TitleTextBlock.Text = "Dinner";
                 }
-            }
+        }
 
             private void Page_Loaded(object sender, RoutedEventArgs e)
             {
-                //if (launchedNormal == true)
-                //{
+                if (launchedNormal == true)
+                {
                     Breakfast.IsSelected = true;
-                //}
+                }
             }
 
             public void BreakfastVoice()
@@ -73,7 +73,14 @@ namespace Gesture_App_1
                 TitleTextBlock.Text = "Dinner";
             }
 
+            public void TimeRecipeVoice()
+            {
+            //testing
+            launchedNormal = false;
+            RecipeManager.GetShortRecipe(10, RecipeItems);
+            TitleTextBlock.Text = "Short Recipes";
+            }
 
-        }
     }
+}
 

@@ -31,6 +31,15 @@
       <Feedback> Getting Dinner Recipes </Feedback>
      <Navigate/>
     </Command>
+    
+  <Command Name="timeTest">
+      <Example> show short recipes </Example>      
+      <ListenFor> open [the] short [recipes] page </ListenFor>
+      <ListenFor> show [me] short ideas </ListenFor>  
+      <ListenFor> show [me] short recipes </ListenFor>  
+      <Feedback> Getting Short Recipes </Feedback>
+     <Navigate/>
+    </Command>
   
   </CommandSet>
 </VoiceCommands>

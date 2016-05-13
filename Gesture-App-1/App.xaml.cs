@@ -168,6 +168,12 @@ namespace Gesture_App_1
                         page.DinnerVoice();
                         break;
 
+                    case "timeTest":
+                        //go to dinner recipes 
+                        //rootFrame.Navigate(typeof(MainPage));
+                        page.TimeRecipeVoice();
+                        break;
+
                     default:
                         Debug.WriteLine("No matching command found");
                         break;
