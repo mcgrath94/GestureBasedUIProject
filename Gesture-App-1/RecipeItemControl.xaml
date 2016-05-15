@@ -9,11 +9,11 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid Background="White" Margin="10" Height="Auto" Width="200">
+    <Grid Background="Gray" Margin="10" Height="Auto" Width="200">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="250" />
         </Grid.RowDefinitions>
 
         <VisualStateManager.VisualStateGroups>
@@ -47,9 +47,9 @@
         <TextBlock Text="{x:Bind RecipeItem.RecipeName}" Name="RecipeTextBlock" RelativePanel.AlignTopWithPanel="True" FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" FontStyle="Italic" />
         
 
-        <RelativePanel Grid.Row="1" Margin="5">
-            <Image Name="MyImage" Source="{x:Bind RecipeItem.Image}" Width="200" Stretch="Uniform"/>
-            <TextBlock Text="{x:Bind RecipeItem.Ingredients}" Name="IngredientsTextBlock" RelativePanel.Below="MyImage" FontSize="10" TextWrapping="Wrap" />
+        <RelativePanel Grid.Row="1" Margin="5" >
+            <Image Name="MyImage" Source="{x:Bind RecipeItem.Image}" />
+            <TextBlock FontFamily="Segoe UI Symbol" Text="{x:Bind RecipeItem.PrepTime}" Name="PrepTimeTextBlock" RelativePanel.Below="MyImage" TextWrapping="Wrap" />
         </RelativePanel>
 
     </Grid>

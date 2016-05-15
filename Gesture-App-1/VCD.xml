@@ -1,34 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
-
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
   <CommandSet xml:lang="en-gb" Name="CollegeAppCommandSet_en-gb">
     <CommandPrefix> Listen </CommandPrefix>
-    <Example> Open main page </Example>
+    <Example> Show breakfast ideas </Example>
     
      <Command Name="openMainPage">
       <Example> open the main page </Example>      
       <ListenFor> open [the] main page </ListenFor>
       <ListenFor> open [the] Recipe [app] </ListenFor> 
        <ListenFor> show [the] Recipe [app] </ListenFor> 
-      <Feedback> Opening the Recipes App Main Page </Feedback>
+      <Feedback> Opening the Recipes  </Feedback>
      <Navigate/>
     </Command>
     
         <Command Name="openBreakfasts">
-      <Example> open the breakfasts page </Example>      
+      <Example> show breakfast recipes </Example>      
       <ListenFor> open [the] breakfast [recipes] page </ListenFor>
       <ListenFor> show [me] breakfast ideas </ListenFor>  
       <ListenFor> show [me] breakfast recipes </ListenFor>  
-      <Feedback> Getting Breakfast Recipes </Feedback>
+      <Feedback> Getting breakfast Recipes </Feedback>
      <Navigate/>
     </Command>
 
     <Command Name="openDinners">
-      <Example> open the main page </Example>      
+      <Example> show dinner recipes </Example>      
       <ListenFor> open [the] dinner [recipes] page </ListenFor>
       <ListenFor> show [me] dinner ideas </ListenFor>  
       <ListenFor> show [me] dinner recipes </ListenFor>  
-      <Feedback> Getting Dinner Recipes </Feedback>
+      <Feedback> Getting dinner recipes </Feedback>
      <Navigate/>
     </Command>
     
@@ -37,7 +36,7 @@
       <ListenFor> open [the] {difficulty} [recipes] page </ListenFor>
       <ListenFor> show [me] {difficulty} ideas </ListenFor>  
       <ListenFor> show [me] {difficulty} recipes </ListenFor>  
-      <Feedback> Getting Recipes </Feedback>
+      <Feedback> Getting {difficulty} recipes </Feedback>
      <Navigate/>
     </Command>
     

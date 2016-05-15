@@ -24,12 +24,7 @@ namespace Gesture_App_1
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //public int timeTaken;
-        public int shortTime = 10;
-        public int medTime = 10;
-        public int longTime = 10;
-
-
+  
         private ObservableCollection<RecipeItem> RecipeItems;
             public bool launchedNormal = true;
 
@@ -87,6 +82,14 @@ namespace Gesture_App_1
             TitleTextBlock.Text = "Chosen Recipes";
             }
 
+        private void RecipeItemGrid_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var recipe = (RecipeItem)e.ClickedItem;
+
+            ClickedItemTitle.Text = recipe.RecipeName;
+            ClickedItemIngredients.Text = "Ingredients: " + recipe.Ingredients;
+            ClickedItemDirections.Text = "Directions: " + recipe.Directions;
+        }
     }
 }
 
