@@ -36,7 +36,7 @@ I would like to continue to develop the app so that the user can ask Cortana to 
 ##References
 While developing the app I mainly referred to the Windows-10-development-for-absolute-beginners series for help.
 
-[Windows-10-Dev-Series](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)
-[Simple Cortana Integration Tutorial](https://www.youtube.com/watch?v=0Wcn-ZK9mi4)
+[Windows-10-Dev-Series](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)  
+[Simple Cortana Integration Tutorial](https://www.youtube.com/watch?v=0Wcn-ZK9mi4)  
 [The material in the app](http://www.bbcgoodfood.com/)
 
