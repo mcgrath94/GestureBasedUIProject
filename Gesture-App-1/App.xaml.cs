@@ -165,14 +165,14 @@ namespace Gesture_App_1
 
                 switch(spokenDifficulty)
                 {
-                    case "easy":
-                        difficulty = "easyLevel";
+                    case "Easy":
+                        difficulty = "Easy";
                         break;
-                    case "moderate":
-                        difficulty = "intermediateLevel";
+                    case "Medium":
+                        difficulty = "Medium";
                         break;
-                    case "hard":
-                        difficulty = "hardLevel";
+                    case "Hard":
+                        difficulty = "Hard";
                         break;
                     default:
                         Debug.WriteLine("No matching command found");

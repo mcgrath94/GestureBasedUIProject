@@ -13,7 +13,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="250" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <VisualStateManager.VisualStateGroups>
@@ -49,7 +49,8 @@
 
         <RelativePanel Grid.Row="1" Margin="5" >
             <Image Name="MyImage" Source="{x:Bind RecipeItem.Image}" />
-            <TextBlock FontFamily="Segoe UI Symbol" Text="{x:Bind RecipeItem.PrepTime}" Name="PrepTimeTextBlock" RelativePanel.Below="MyImage" TextWrapping="Wrap" />
+            <TextBlock Text="{x:Bind RecipeItem.PrepTime}" Name="PrepTimeTextBlock" RelativePanel.Below="MyImage" TextWrapping="Wrap" />
+            <TextBlock Text="{x:Bind RecipeItem.Level}" Name="LevelTextBlock" RelativePanel.Below="MyImage" RelativePanel.AlignRightWithPanel="True" TextWrapping="Wrap" />
         </RelativePanel>
 
     </Grid>

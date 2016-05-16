@@ -9,7 +9,7 @@
       <ListenFor> open [the] main page </ListenFor>
       <ListenFor> open [the] Recipe [app] </ListenFor> 
        <ListenFor> show [the] Recipe [app] </ListenFor> 
-      <Feedback> Opening the Recipes  </Feedback>
+      <Feedback> Showing Recipes </Feedback>
      <Navigate/>
     </Command>
     
@@ -18,7 +18,7 @@
       <ListenFor> open [the] breakfast [recipes] page </ListenFor>
       <ListenFor> show [me] breakfast ideas </ListenFor>  
       <ListenFor> show [me] breakfast recipes </ListenFor>  
-      <Feedback> Getting breakfast Recipes </Feedback>
+      <Feedback> Showing breakfast Recipes </Feedback>
      <Navigate/>
     </Command>
 
@@ -27,7 +27,7 @@
       <ListenFor> open [the] dinner [recipes] page </ListenFor>
       <ListenFor> show [me] dinner ideas </ListenFor>  
       <ListenFor> show [me] dinner recipes </ListenFor>  
-      <Feedback> Getting dinner recipes </Feedback>
+      <Feedback> Showing dinner recipes </Feedback>
      <Navigate/>
     </Command>
     
@@ -36,14 +36,14 @@
       <ListenFor> open [the] {difficulty} [recipes] page </ListenFor>
       <ListenFor> show [me] {difficulty} ideas </ListenFor>  
       <ListenFor> show [me] {difficulty} recipes </ListenFor>  
-      <Feedback> Getting {difficulty} recipes </Feedback>
+      <Feedback> Showing {difficulty} recipes </Feedback>
      <Navigate/>
     </Command>
     
   <PhraseList Label="difficulty">
-    <Item> easy </Item>
-    <Item> moderate </Item>
-    <Item> hard </Item>
+    <Item> Easy </Item>
+    <Item> Medium </Item>
+    <Item> Hard </Item>
   </PhraseList>
   
   </CommandSet>

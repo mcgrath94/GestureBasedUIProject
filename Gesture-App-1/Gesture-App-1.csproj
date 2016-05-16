@@ -92,15 +92,19 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Recipes\bagel.jpg" />
     <Content Include="Assets\Recipes\Black-Forest-Pavlova.jpg" />
     <Content Include="Assets\Recipes\Chocolate-Caramel-Treats.jpg" />
     <Content Include="Assets\Recipes\Eggs-Benedict.jpg" />
+    <Content Include="Assets\Recipes\french-toast.jpg" />
+    <Content Include="Assets\Recipes\jambalaya.jpg" />
     <Content Include="Assets\Recipes\Lemon-Sponge.jpg" />
     <Content Include="Assets\Recipes\Pancakes.jpg" />
     <Content Include="Assets\Recipes\Porridge.jpg" />
+    <Content Include="Assets\Recipes\roast.jpg" />
     <Content Include="Assets\Recipes\Shepherds-Pie.jpg" />
-    <Content Include="Assets\Recipes\Spaghetti-Bolgnese.jpg" />
-    <Content Include="Assets\Recipes\Sweet-Sour-Chicken-2.jpg" />
+    <Content Include="Assets\Recipes\spaghetti.jpg" />
+    <Content Include="Assets\Recipes\sweet-sour-chicken.jpg" />
     <Content Include="VCD.xml" />
     <None Include="project.json" />
   </ItemGroup>

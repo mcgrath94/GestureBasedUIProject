@@ -146,10 +146,11 @@
                    Foreground="Black"
                    FontWeight="Light" />
                 <!-- Selected Item Directions -->
-                <TextBlock Name="ClickedItemDirections"
+                <TextBlock Name="ClickedItemDirections"     
                    Margin="0,10,0,0"
                    Grid.Column="1"
                    Grid.Row="1"
+                   TextWrapping="Wrap"        
                    FontSize="12"
                    Foreground="Black"
                    FontWeight="Light"/>
