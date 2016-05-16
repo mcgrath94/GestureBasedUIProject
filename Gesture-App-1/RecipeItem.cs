@@ -23,12 +23,12 @@ namespace Gesture_App_1
 
     public class RecipeManager
     {
-        /*public static void GetAllRecipe(ObservableCollection<RecipeItem> recipeItems)
+        public static void GetAllRecipe(ObservableCollection<RecipeItem> recipeItems)
         {
             var allItems = getRecipeItems();
             recipeItems.Clear();
             allItems.ForEach(p => recipeItems.Add(p));
-        }*/
+        }
 
         public static void GetRecipe(string category, ObservableCollection<RecipeItem> recipeItems)
         {
@@ -141,7 +141,7 @@ namespace Gesture_App_1
             {
                 Id = 9,
                 Category = "Dinner",
-                RecipeName = "Pan roast",
+                RecipeName = "Pot roast",
                 Level = "Medium",
                 PrepTime = "1hr 30 mins",
                 Ingredients = "1½ kg chicken, 1 lemon, 50g softened butter, 2 tsp dried mixed herbs, 750g potatoes, about 7 carrots, 2 tbsp olive oil, 100g frozen peas, 300ml chicken stock, 1 tsp Marmite",

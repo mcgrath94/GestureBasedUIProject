@@ -2,13 +2,14 @@
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
   <CommandSet xml:lang="en-gb" Name="CollegeAppCommandSet_en-gb">
     <CommandPrefix> Listen </CommandPrefix>
-    <Example> Show breakfast ideas </Example>
+    <Example> show about app </Example>
     
      <Command Name="openMainPage">
       <Example> open the main page </Example>      
       <ListenFor> open [the] main page </ListenFor>
-      <ListenFor> open [the] Recipe [app] </ListenFor> 
-       <ListenFor> show [the] Recipe [app] </ListenFor> 
+      <ListenFor> open [the] recipe app </ListenFor> 
+       <ListenFor> show [the] recipe app </ListenFor> 
+       <ListenFor> show [all] recipes </ListenFor> 
       <Feedback> Showing Recipes </Feedback>
      <Navigate/>
     </Command>
@@ -40,11 +41,138 @@
      <Navigate/>
     </Command>
     
+      <Command Name="showAbout">
+      <Example> show about app</Example>      
+      <ListenFor> open [the] about page </ListenFor>
+      <ListenFor> show about [the] app </ListenFor>  
+      <ListenFor> show [me] about [recipes] app </ListenFor>   
+      <Feedback> Showing about the app </Feedback>
+     <Navigate/>
+    </Command>
+    
   <PhraseList Label="difficulty">
     <Item> Easy </Item>
     <Item> Medium </Item>
     <Item> Hard </Item>
   </PhraseList>
   
+  </CommandSet>
+
+<CommandSet xml:lang="en-us" Name="CollegeAppCommandSet_en-us">
+    <CommandPrefix> Listen </CommandPrefix>
+    <Example> Show breakfast ideas </Example>
+    
+     <Command Name="openMainPage">
+      <Example> open the main page </Example>      
+      <ListenFor> open [the] main page </ListenFor>
+      <ListenFor> open [the] recipe app </ListenFor> 
+       <ListenFor> show [the] recipe app </ListenFor> 
+       <ListenFor> show [all] recipes </ListenFor> 
+      <Feedback> Showing Recipes </Feedback>
+     <Navigate/>
+    </Command>
+    
+        <Command Name="openBreakfasts">
+      <Example> show breakfast recipes </Example>      
+      <ListenFor> open [the] breakfast [recipes] page </ListenFor>
+      <ListenFor> show [me] breakfast ideas </ListenFor>  
+      <ListenFor> show [me] breakfast recipes </ListenFor>  
+      <Feedback> Showing breakfast Recipes </Feedback>
+     <Navigate/>
+    </Command>
+
+    <Command Name="openDinners">
+      <Example> show dinner recipes </Example>      
+      <ListenFor> open [the] dinner [recipes] page </ListenFor>
+      <ListenFor> show [me] dinner ideas </ListenFor>  
+      <ListenFor> show [me] dinner recipes </ListenFor>  
+      <Feedback> Showing dinner recipes </Feedback>
+     <Navigate/>
+    </Command>
+    
+  <Command Name="showDifficulty">
+      <Example> show easy recipes </Example>      
+      <ListenFor> open [the] {difficulty} [recipes] page </ListenFor>
+      <ListenFor> show [me] {difficulty} ideas </ListenFor>  
+      <ListenFor> show [me] {difficulty} recipes </ListenFor>  
+      <Feedback> Showing {difficulty} recipes </Feedback>
+     <Navigate/>
+    </Command>
+  
+  <Command Name="showAbout">
+      <Example> show about app</Example>      
+      <ListenFor> open [the] about page </ListenFor>
+      <ListenFor> show about [the] app </ListenFor>  
+      <ListenFor> show [me] about [recipes] app </ListenFor>   
+      <Feedback> Showing about the app </Feedback>
+     <Navigate/>
+    </Command>
+    
+  <PhraseList Label="difficulty">
+    <Item> Easy </Item>
+    <Item> Medium </Item>
+    <Item> Hard </Item>
+  </PhraseList>
+  
+  </CommandSet>
+
+
+<CommandSet xml:lang="en-ca" Name="CollegeAppCommandSet_en-ca">
+    <CommandPrefix> Listen </CommandPrefix>
+    <Example> Show breakfast ideas </Example>
+    
+     <Command Name="openMainPage">
+      <Example> open the main page </Example>      
+      <ListenFor> open [the] main page </ListenFor>
+      <ListenFor> open [the] recipe app </ListenFor> 
+       <ListenFor> show [the] recipe app </ListenFor> 
+       <ListenFor> show [all] recipes </ListenFor> 
+      <Feedback> Showing Recipes </Feedback>
+     <Navigate/>
+    </Command>
+    
+        <Command Name="openBreakfasts">
+      <Example> show breakfast recipes </Example>      
+      <ListenFor> open [the] breakfast [recipes] page </ListenFor>
+      <ListenFor> show [me] breakfast ideas </ListenFor>  
+      <ListenFor> show [me] breakfast recipes </ListenFor>  
+      <Feedback> Showing breakfast Recipes </Feedback>
+     <Navigate/>
+    </Command>
+
+    <Command Name="openDinners">
+      <Example> show dinner recipes </Example>      
+      <ListenFor> open [the] dinner [recipes] page </ListenFor>
+      <ListenFor> show [me] dinner ideas </ListenFor>  
+      <ListenFor> show [me] dinner recipes </ListenFor>  
+      <Feedback> Showing dinner recipes </Feedback>
+     <Navigate/>
+    </Command>
+    
+  <Command Name="showDifficulty">
+      <Example> show easy recipes </Example>      
+      <ListenFor> open [the] {difficulty} [recipes] page </ListenFor>
+      <ListenFor> show [me] {difficulty} ideas </ListenFor>  
+      <ListenFor> show [me] {difficulty} recipes </ListenFor>  
+      <Feedback> Showing {difficulty} recipes </Feedback>
+     <Navigate/>
+    </Command>
+  
+    <Command Name="showAbout">
+      <Example> show about app</Example>      
+      <ListenFor> open [the] about page </ListenFor>
+      <ListenFor> show about [the] app </ListenFor>  
+      <ListenFor> show [me] about [recipes] app </ListenFor>   
+      <Feedback> Showing about the app </Feedback>
+     <Navigate/>
+    </Command>
+    
+  <PhraseList Label="difficulty">
+    <Item> Easy </Item>
+    <Item> Medium </Item>
+    <Item> Hard </Item>
+  </PhraseList>
+  
+
   </CommandSet>
 </VoiceCommands>

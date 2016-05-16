@@ -100,7 +100,7 @@ namespace Gesture_App_1
 
         }
 
-        protected override void OnActivated(IActivatedEventArgs args)
+        protected async override void OnActivated(IActivatedEventArgs args)
         {
             base.OnActivated(args);
 
@@ -180,7 +180,7 @@ namespace Gesture_App_1
                 }
 
 
-                //MessageDialog dialog = new MessageDialog("");
+                MessageDialog dialog = new MessageDialog("");
                 MainPage page = rootFrame.Content as MainPage;
                 if (page == null)
                 {
@@ -191,8 +191,8 @@ namespace Gesture_App_1
                 switch (commandName)
                 {
                     case "openMainPage":
-                        //navigates to the main page
-                        //rootFrame.Navigate(typeof(MainPage));
+                        //show all recipes
+                        rootFrame.Navigate(typeof(MainPage));
                         //dialog.Content = "This is the test - could be used to open dialog";
                         break;
 
@@ -203,14 +203,19 @@ namespace Gesture_App_1
 
                     case "openDinners":
                         //go to dinner recipes 
-                        //rootFrame.Navigate(typeof(MainPage));
                         page.DinnerVoice();
                         break;
 
                     case "showDifficulty":
                         //go to dinner recipes 
-                        //rootFrame.Navigate(typeof(MainPage));
                         page.difficultyRecipeVoice(difficulty);
+                        break;
+
+                    case "showAbout":
+                        //show about the app
+                        dialog.Title = "How to use this app";
+                        dialog.Content = "This app is a Cookbook app witch can be used with Cortana to show the user recipes. You can ask Cortana something like 'Listen show me breakfast recipes', 'Listen show me dinner ideas' or 'Listen show me hard recipes' ";
+                        await dialog.ShowAsync();
                         break;
 
                     default:
@@ -218,7 +223,7 @@ namespace Gesture_App_1
                         break;
                     
                 }
-                //await dialog.ShowAsync(); //could be used to open dialog along with above
+                 
                 
             }
         }

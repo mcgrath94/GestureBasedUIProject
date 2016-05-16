@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
 using Gesture_App_1;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -24,7 +25,10 @@ namespace Gesture_App_1
     /// </summary>
     public sealed partial class MainPage : Page
     {
-  
+        Frame rootFrame = new Frame();
+
+        MessageDialog dialog = new MessageDialog("");
+
         private ObservableCollection<RecipeItem> RecipeItems;
             public bool launchedNormal = true;
 
@@ -51,22 +55,26 @@ namespace Gesture_App_1
                     RecipeManager.GetRecipe("Dinner", RecipeItems);
                     TitleTextBlock.Text = "Dinner";
                 }
+
         }
 
             private void Page_Loaded(object sender, RoutedEventArgs e)
             {
-                if (launchedNormal == true)
+                if(launchedNormal == true)
                 {
-                    Breakfast.IsSelected = true;
+                    RecipeManager.GetAllRecipe(RecipeItems);
+                    TitleTextBlock.Text = "All Recipes";
                 }
+               
             }
 
             public void BreakfastVoice()
             {
-                //launchedNormal = false;  do not need this as it goes to breakfast recipes automatically anyway
+                launchedNormal = false;  
                 RecipeManager.GetRecipe("Breakfast", RecipeItems);
                 TitleTextBlock.Text = "Breakfast";
             }
+
             public void DinnerVoice()
             {
                 launchedNormal = false;
@@ -82,6 +90,8 @@ namespace Gesture_App_1
             TitleTextBlock.Text = "Chosen Recipes";
             }
 
+            
+
         private void RecipeItemGrid_ItemClick(object sender, ItemClickEventArgs e)
         {
             var recipe = (RecipeItem)e.ClickedItem;
@@ -90,6 +100,9 @@ namespace Gesture_App_1
             ClickedItemIngredients.Text = "Ingredients: " + recipe.Ingredients;
             ClickedItemDirections.Text = "Directions: " + recipe.Directions;
         }
+
+        
+
     }
 }
 
