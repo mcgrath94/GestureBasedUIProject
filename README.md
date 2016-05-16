@@ -16,10 +16,10 @@ The gesture used was voice - this I believe is the most suitable for such an app
 having to pause and open the app. This is the main purpose of the application - to help the user by making their experience more efficient.
 
 ##What can you say to the app?
-There are a number of different commands that can be used with the app, such as saying to Cortana;
--Listen show me dinner recipes
--Listen show me breakfast ideas
--Listen show me easy/medium/hard recipes 
+There are a number of different commands that can be used with the app, such as saying to Cortana;  
+-Listen show me dinner recipes  
+-Listen show me breakfast ideas  
+-Listen show me easy/medium/hard recipes  
 -Listen show about recipes app
 
 A full list of the possible commands can be found in the VCD.xml file.
