@@ -17,7 +17,7 @@ having to pause and open the app. This is the main purpose of the application - 
 For creating the application I used Visual Studio 2015 on Windows 10 and tested the app on my HP Laptop with Windows 10 as Cortana is 
 built into Windows 10. Unfortunately I was unable to test the app on a Windows Phone or tablet.
 
-Conclusions & Recommendations:
+##Conclusions & Recommendations:
 After working on this project I learned a lot about implementing Cortana into UWP apps. At the beginning it was quite hard to use but as 
 I moved through the project it became easier to understand how the app can incorporate Cortana functionality. I believe the use of Cortana 
 and other similar interfaces(Siri, Google etc.) could greatly improve the users experience in applications such as this one and they will 
